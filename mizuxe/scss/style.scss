@@ -31,6 +31,10 @@ body {
   }
 }
 
+.info-header {
+  border-bottom: 1px #ddd solid;
+}
+
 @media (max-width: 768px) {
   #showcase {
     min-height: 500px;
