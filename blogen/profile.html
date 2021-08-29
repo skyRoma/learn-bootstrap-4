@@ -42,7 +42,7 @@
               <a href="categories.html" class="nav-link">Categories</a>
             </li>
             <li class="nav-item px-2">
-              <a href="users.html" class="nav-link active">Users</a>
+              <a href="users.html" class="nav-link">Users</a>
             </li>
           </ul>
 
@@ -75,88 +75,81 @@
     </nav>
 
     <!-- HEADER -->
-    <header id="main-header" class="py-2 bg-warning text-white">
+    <header id="main-header" class="py-2 bg-primary text-white">
       <div class="container">
         <div class="row">
           <div class="col-md-6">
-            <h1><i class="fas fa-users"></i>Users</h1>
+            <h1><i class="fas fa-user"></i> Edit Profile</h1>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- SEARCH -->
-    <section id="search" class="py-4 mb-4 bg-light">
+    <!-- ACTIONS -->
+    <section id="actions" class="py-4 mb-4 bg-light">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 ml-auto">
-            <div class="input-group">
-              <input
-                type="text"
-                class="form-control"
-                placeholder="Search Users..."
-              />
-              <div class="input-group-append">
-                <button class="btn btn-warning">Search</button>
-              </div>
-            </div>
+          <div class="col-md-3">
+            <a href="index.html" class="btn btn-light btn-block"
+              ><i class="fas fa-arrow-left"></i> Back To Dashboard</a
+            >
+          </div>
+          <div class="col-md-3">
+            <a href="#" class="btn btn-success btn-block"
+              ><i class="fas fa-lock"></i> Change Password</a
+            >
+          </div>
+          <div class="col-md-3">
+            <a href="#" class="btn btn-danger btn-block"
+              ><i class="fas fa-trash"></i> Delete Account</a
+            >
           </div>
         </div>
       </div>
     </section>
 
-    <!-- USERS -->
-    <section id="users">
+    <!-- PROFILE -->
+    <section id="profile">
       <div class="container">
         <div class="row">
-          <div class="col">
+          <div class="col-md-9">
             <div class="card">
               <div class="card-header">
-                <h4>Latest Users</h4>
+                <h4>Edit Profile</h4>
               </div>
-              <table class="table table-striped">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>#</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th></th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>John Doe</td>
-                    <td>jdoe@gmail.com</td>
-                    <td>
-                      <a href="details.html" class="btn btn-secondary">
-                        <i class="fas fa-angle-double-right"></i> Details
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>2</td>
-                    <td>Harry White</td>
-                    <td>harry@yahoo.com</td>
-                    <td>
-                      <a href="details.html" class="btn btn-secondary">
-                        <i class="fas fa-angle-double-right"></i> Details
-                      </a>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>3</td>
-                    <td>Marry Johnson</td>
-                    <td>mary@gmail.com</td>
-                    <td>
-                      <a href="details.html" class="btn btn-secondary">
-                        <i class="fas fa-angle-double-right"></i> Details
-                      </a>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+              <div class="card-body">
+                <form>
+                  <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value="Roman Sluka"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      value="roman@gmail.com"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="bio">Bio</label>
+                    <textarea class="form-control" name="editor1">
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Et magnam blanditiis amet laboriosam facilis officiis, debitis illum sunt molestias odit quis animi obcaecati dicta praesentium voluptatum quae accusantium assumenda dignissimos aperiam voluptatem, omnis dolores temporibus mollitia. Odit autem amet ad.</textarea
+                    >
+                  </div>
+                </form>
+              </div>
             </div>
+          </div>
+          <div class="col-md-3">
+            <h3>Your Avatar</h3>
+            <img src="img/avatar.png" class="d-block img-fluid mb-3" />
+            <button class="btn btn-primary btn-block">Edit Image</button>
+            <button class="btn btn-danger btn-block">Delete Image</button>
           </div>
         </div>
       </div>
@@ -186,9 +179,13 @@
       integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdn.ckeditor.com/4.16.2/standard/ckeditor.js"></script>
     <script>
       // Get current year for copyright
       $("#year").text(new Date().getFullYear());
+
+      // Init editor
+      CKEDITOR.replace("editor1");
     </script>
   </body>
 </html>
